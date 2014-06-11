@@ -1,0 +1,9 @@
+//Does a struct/union/enum and int type has the same namespace
+
+int id;
+struct id;
+
+int main()
+{
+  printf("test");
+}
