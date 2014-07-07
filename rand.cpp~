@@ -1,0 +1,14 @@
+
+#include <iostream>
+#include <vector>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main()
+{
+  seed(time());
+  for(int i=0;i<100;++i)
+    cout << rand(5) << " " ;
+  return 0;
+}

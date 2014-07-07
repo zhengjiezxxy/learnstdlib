@@ -1,0 +1,20 @@
+
+
+#include <string>
+#include <iostream>
+#include <fstream>
+#include <sstream>
+using namespace std;
+
+int main()
+{
+  //ofstream ofs("test1.txt");
+  istringstream iss(" 0x9A 2.80000 <HAPPY>");
+
+  int i;
+  double f;
+  string s;
+  iss >> ios_base::hex >> i >> ios_base::dec >> f >> s;
+  cout << i << " " << f << " " << s << endl;
+  return 0;
+}

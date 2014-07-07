@@ -1,0 +1,46 @@
+// Arthor: Jack Chin
+// Date: 24/06/2014
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <cctype>
+
+void trimspace(std::string str)
+{
+  //trim left use string library
+  std::string::iterator it= str.begin();
+  while(isspace(*it))
+    {
+      it = str.erase(it);
+    }
+  //trim right use string library
+  std::reverse(str.begin(),str.end());
+  it= str.begin();
+  while(isspace(*it))
+    {
+      it = str.erase(it);
+    }
+  std::reverse(str.begin(),str.end());
+  std::cout << str << "+++" << std::endl;
+}
+void trimspace1(std::string str) //find_first_of find_last_of
+{
+  const auto strbegin  = str.find_first_not_of("\t \v\r\n");
+  const auto strend = str.find_last_not_of("\t \v\r\n");
+  const auto strrange = strend - strbegin + 1;
+  str = str.substr(strbegin,strrange);
+  std::cout << str << "+++" << std::endl;
+  
+  
+}
+
+
+int main() 
+{
+  std::string str = " A B 100  ";
+  trimspace(str);
+  trimspace1(str);
+  return 0;
+}
+    
+  
